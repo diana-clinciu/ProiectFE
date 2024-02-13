@@ -45,9 +45,9 @@ const AddProductPage = () => {
         product
       );
 
-      console.log("Produs și imagine încărcate cu succes!");
+      console.log("Product added!");
     } catch (error) {
-      console.error("Eroare la încărcarea produsului și imaginii:", error);
+      console.error("Eroare while trying to add product:", error);
     }
 
     actions.setSubmiting(false);
@@ -143,11 +143,7 @@ const AddProductPage = () => {
                 }}
               />
 
-              <Button
-                mt={4}
-                isLoading={props.isSubmitting}
-                type="submit"
-              >
+              <Button mt={4} isLoading={props.isSubmitting} type="submit">
                 Submit
               </Button>
             </Form>

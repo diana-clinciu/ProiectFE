@@ -1,5 +1,5 @@
 .hero {
-    background-image: url('../../images/strawbery_short_cake.jpg'); /* Replace with the actual path to your hero image */
+    background-image: url('../images/strawbery_short_cake.jpg'); /* Replace with the actual path to your hero image */
     background-size: cover;
     background-position: center;
     color: #ce28c8;

@@ -3,17 +3,10 @@ import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
   Image,
-  Stack,
   Text,
   Heading,
   SimpleGrid,
-  Container,
-  Spacer,
   Button,
   Box,
 } from "@chakra-ui/react";

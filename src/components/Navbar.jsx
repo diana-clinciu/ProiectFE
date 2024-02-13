@@ -9,13 +9,14 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 
 const Navbar = () => {
   const homeMatch = useMatch("/");
-  const counterMatch = useMatch("/counter");
+  const productsMatch = useMatch("/products");
+  const addProductMatch = useMatch("/addproduct");
 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   return (
     <>
-      <HStack bg="red.200" p="3" spacing="10">
+      <HStack bg="red.200" p="3" spacing="10" align="center">
         <Box p="3">
           <Link to="/">
             <Text
@@ -31,7 +32,7 @@ const Navbar = () => {
         <Box>
           <Link to="/addproduct">
             <Text
-              color={counterMatch ? "white" : "black"}
+              color={addProductMatch ? "white" : "black"}
               fontWeight="bold"
               fontSize="lg"
             >
@@ -43,7 +44,7 @@ const Navbar = () => {
         <Box>
           <Link to="/products">
             <Text
-              color={counterMatch ? "white" : "black"}
+              color={productsMatch ? "white" : "black"}
               fontWeight="bold"
               fontSize="lg"
             >

@@ -12,7 +12,7 @@ import {
   Spacer,
   Box,
   LinkBox,
-  LinkOverlay
+  LinkOverlay,
 } from "@chakra-ui/react";
 
 const ProductList = ({ category, bgColor }) => {
@@ -46,27 +46,37 @@ const ProductList = ({ category, bgColor }) => {
 
   return (
     <Box px="6rem" bg={bgColor} py="3rem">
-      <Heading textAlign={"center"} textTransform={"capitalize"} mb="3rem" id={category}>
+      <Heading
+        textAlign={"center"}
+        textTransform={"capitalize"}
+        mb="3rem"
+        id={category}
+      >
         {category}
       </Heading>
-      <Spacer/>
+      <Spacer />
       <SimpleGrid columns={{ sm: 2, md: 4 }} spacing="2rem">
         {products.map((product) => (
           <LinkBox>
-          <LinkOverlay href={`/categories/${category}/products/${product.id}`}>
-          <Card variant={"unstyled"} bg={bgColor}>
-            <CardBody>
-              <Image src={product.imageURL} alt="product" borderRadius="lg" objectFit='cover'/>
-              <Stack mt="6">
-                <Heading size="md">{product.name}</Heading>
-                <Text>{product.description.slice(0,60)}...</Text>
-                <Text fontSize="2xl">
-                  ${product.price}
-                </Text>
-              </Stack>
-            </CardBody>
-          </Card>
-          </LinkOverlay>
+            <LinkOverlay
+              href={`/categories/${category}/products/${product.id}`}
+            >
+              <Card variant={"unstyled"} bg={bgColor}>
+                <CardBody>
+                  <Image
+                    src={product.imageURL}
+                    alt="product"
+                    borderRadius="lg"
+                    objectFit="cover"
+                  />
+                  <Stack mt="6">
+                    <Heading size="md">{product.name}</Heading>
+                    <Text>{product.description.slice(0, 60)}...</Text>
+                    <Text fontSize="2xl">${product.price}</Text>
+                  </Stack>
+                </CardBody>
+              </Card>
+            </LinkOverlay>
           </LinkBox>
         ))}
       </SimpleGrid>
